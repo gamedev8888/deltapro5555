@@ -22,7 +22,7 @@ Note: Javascript does use var and let for local variables.
 <h4> Example input output code</h4>
 <pre>
     let myIn01 = document.getElementById('myText01').value
-    document.getElementById('myDive1').innerHTML = myIn01
+    document.getElementById('myDiv01').innerHTML = myIn01
 </pre>
 
 <h4> Example working code</h4>
@@ -30,8 +30,8 @@ Note: Javascript does use var and let for local variables.
 <input id="myText01" type=text value="The dog"><br>
 
 <input type=button value="Show Variable" onclick="{
-   document.getElementById('myText01').value 
-      document.getElementById('myDive1').innerHTML = myIn01
+   let myIn01 = document.getElementById('myText01').value
+      document.getElementById('myDiv01').innerHTML = myIn01
     
    }"><br>
 
