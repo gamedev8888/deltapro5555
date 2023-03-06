@@ -48,8 +48,8 @@ onKeyPress, onDragStart, onTouchStart, onTouchEnd, onTouchMove
 
       touchDiv.ontouchmove = function(event) {
         event.preventDefault();
-        touchDiv.style.left = event.touches[0].pageX + 'px';
-        touchDiv.style.top = event.touches[0].pageY + 'px';
+        touchDiv.style.left = event.touches[1].pageX + 'px';
+        touchDiv.style.top = event.touches[1].pageY + 'px';
       };
     </script>
   </body>
