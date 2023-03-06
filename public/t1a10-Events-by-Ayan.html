@@ -35,22 +35,13 @@ You can do at least 8 other events:<br>
 onClick, onDBClick, onChange, onBlur, onFocus, orMouseMove, onTouch, onKeyDown,
 onKeyPress, onDragStart, onTouchStart, onTouchEnd, onTouchMove
 
-   <!DOCTYPE html>
-<html>
-  <head>
-    <title>Touch Move Event Example</title>
-  </head>
-  <body>
-    <div id="touchDiv" style="width: 200px; height: 200px; background-color: red;"></div>
+  const element = document.getElementById('my-element');
 
-    <script>
-      var touchDiv = document.getElementById("touchDiv");
+element.addEventListener('mousemove', (event) => {
+  // Do something with the mouse position
+  const x = event.clientX;
+  const y = event.clientY;
+  console.log(`Mouse position: (${x}, ${y})`);
+});
 
-      touchDiv.ontouchmove = function(event) {
-        event.preventDefault();
-        touchDiv.style.left = event.touches[1].pageX + 'px';
-        touchDiv.style.top = event.touches[1].pageY + 'px';
-      };
-    </script>
-  </body>
-</html>
+
