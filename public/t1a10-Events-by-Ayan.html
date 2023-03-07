@@ -1,4 +1,13 @@
 Version 0.0.5
+<style> 
+@keyframes myfirst {
+  0%   {background: red; left: 0px; top: 0px;}
+  25%  {background: yellow; left: 200px; top: 0px;}
+  50%  {background: blue; left: 200px; top: 200px;}
+  75%  {background: green; left: 0px; top: 200px;}
+  100% {background: red; left: 0px; top: 0px;}
+}
+</style>
 
 <h2 align=center>t1a10-Events-by-Ayan.html</h2>
 <body style="background-color:#D6769D;">
@@ -63,4 +72,12 @@ You can do at least 8 other events:<br>
 onClick, onDBClick, onChange, onBlur, onFocus, orMouseMove, onTouch, onKeyDown,
 onKeyPress, onDragStart, onTouchStart, onTouchEnd, onTouchMove
   
-
+ <div id="myDiv01">...</div>
+   
+   <div style="  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: myfirst 5s 2;
+  animation-direction: alternate;
+  "></div>
