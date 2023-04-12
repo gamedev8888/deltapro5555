@@ -21,6 +21,14 @@
 
 <input type=button value="Sort" style="background-color:darkgray;  padding: 1px;" onclick="{
   let myTemp = 0
+                                                                                           
+   for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
+     if ( myCards[myLoop] > myCards[myLoop + 1] ){
+        myTemp = myCards[myLoop]
+        myCards[myLoop] = myCards[myLoop + 1]
+        myCards[myLoop + 1] = myTemp
+     }                                                                                         
+                                                                                           
   for ( let myLoop = 0;   myLoop < myMax;  myLoop++){
      if ( myCards[myLoop] > myCards[myLoop + 1] ){
         myTemp = myCards[myLoop]
@@ -28,6 +36,9 @@
         myCards[myLoop + 1] = myTemp
      }
   }  
+                                                                                           
+                                                                                           
+                                                                                           
 }">
 
 <dir id="myDiv01"></div>
