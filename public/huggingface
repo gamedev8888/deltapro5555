@@ -1,34 +1,108 @@
-<li><a href="hug06-template.html">hug06-template.html</a> A template for most of the pages to come (until I deprecate it)
- <li><a href="hug07-object.html">hug07-object.html</a> Testing image object classification
- <li><a href="hug08-webcam.html">hug08-webcam.html</a> May work on mobile, webcam image data to huggingface with boundingboxes (still has a few issues)
-
-<ul> Text based hugggingface models
-  <li><a href="hug09-00-text.html">hug09-00-text.html</a> Text style MASK using facebook/bart-large-cnn.
-  <li><a href="hug09-01-text.html">hug09-01-text.html</a> Text style summarization using facebook/bart-large-cnn
-  <li><a href="hug09-02-text.html">hug09-02-text.html</a> Text style question answer using deepset/roberta-base-squad2
-  <li><a href="hug02-03.html">hug02-03.html</a> Not sure of the point of this so left it in it's original form    
-  <li><a href="hug09-04-text.html">hug09-04-text.html</a> Text classification using distilbert-base-uncased-finetuned-sst-2-english
-   
-  <li><a href="hug09-05-text.html">hug09-05-text.html</a> Text Generation using GPT-2
-  <li><a href="hug09-06-text.html">hug09-06-text.html</a> Token Classification using dbmdz/bert-large-cased-finetuned-conll03-english
-  <li><a href="hug09-07-text.html">hug09-07-text.html</a> Text translation program from English to German (I think)
-  <li><a href="hug09-08-text.html">hug09-08-text.html</a> Text zero shot classification using facebook/bart-large-mnli
-  <li><a href="hug09-09-text.html">hug09-09-text.html</a> Conversational using microsoft/DialoGPT-large
-  <li><a href="hug09-10-text.html">hug09-10-text.html</a> Text Feacture Extraction using sentence-transformers/paraphrase-xlm-r-multilingual-v1
+<html>
+  <head>
+     <script type="module">
+      import { HfInference } from 'https://cdn.skypack.dev/@huggingface/inference@1.5.2';
+      document.HfInference = HfInference   // bad coding but I need HfInference to be global
+     </script>
     
-</ul>  
-<ul> Audio files
-  <li><a href="hug10-11-audio.html">hug10-11-audio.html</a> Now testing audio. AutoClassification
-  <li><a href="hug10-12-audio.html">hug10-12-audio.htm</a> Audio classification
-</ul>
+    <script>
+     myHugginFaceLoad = async function(mySentToken, mySentData, mySentModel){ 
+        let hf = new document.HfInference(mySentToken)
+        document.myHf = hf  // let this be global, also kind of bad programming
+        
+        const myResponse = await fetch(mySentData)
+        const myImgBlob = await myResponse.blob();
+        const objectDetectionRes = await hf.objectDetection({
+            data: myImgBlob,
+            model: mySentModel
+        })
+        
+        console.log('objectDetectionRes')
+        console.log(objectDetectionRes)
+        console.log('objectDetectionRes[0].label')
+        console.log(objectDetectionRes[0].label)
+       
+        document.myObjDetect = objectDetectionRes   // make it global
+       // document.getElementById('myDiv01').innerHTML = JSON.stringify(objectDetectionRes) 
+        document.getElementById('myDiv01').innerHTML = JSON.stringify(objectDetectionRes, 
+                 function (key, value) {
+                     if (key == "}") {
+                        return "<br>";
+                     }  else {
+                        return value;
+                     }
+                  })
+       
+     }  
+      
+    
+     myImageLoad = async function(myEnteredImageURL){  
+        const myImg = document.getElementById(myEnteredImageURL);
 
-  <ul> Image Classification Examples
-<li><a href="hug11-13-image.html">hug11-13-image.html</a> Image classification using google/vit-base-patch16-224
-<li><a href="hug11-14-image.html">hug11-14-image.html</a> Object detection and location (same as my first attempts), using facebook/detr-resnet-50
-<li><a href="hug11-15-image.html">hug11-15-image.html</a> Segementation of objects, just gives the data using facebook/detr-resnet-50-panoptic
-<li><a href="hug11-15b.html">hug11-15b.html</a> Segementation of objects, this shows the objects in different colors using facebook/detr-resnet-50-panoptic and d3.js
-<li><a href="...">..</a>
-  </ul>
-Text to Image  
-<li><a href="hug16-text-to-image.html">hug16-text-to-image.html</a>  Testing text to image. This is really cool, takes a while but great results.
-</ul>  
+        const myResponse = await fetch(document.getElementById('myDataOrImage').value)
+        const myBlob = await myResponse.blob()
+        const myImageBase64 = URL.createObjectURL(myBlob) 
+        myImg.src  =   myImageBase64       
+      }
+    </script>
+  
+  </head> 
+<body onload="{
+   myStorage = localStorage.getItem('myStoredToken')
+   if(myStorage  != null){
+      document.getElementById('myEnteredToken').value = myStorage 
+    }
+}">
+version 0.3.3-36<br>
+  <h2 align=center> Testing HuggingFaceJS</h2>
+Output in the div below. Works without personal token just stops after about 20 loads or refreshes per hour<br>
+  
+Note: Delete and save a blank token to return to the regular rate.<br><br>  
+<input id="myEnteredToken" type=password size=30>
+<input type="button" value="Store Token Locally" onClick="{
+   localStorage.setItem('myStoredToken', document.getElementById('myEnteredToken').value)
+   document.getElementById('myDiv01').innerHTML = 'Latest Token has been stored containing these last 4 characters: ' +
+       document.getElementById('myEnteredToken').value.slice(-4)
+}"><br>
+  
+Load the URL of the image to Analyse:<br>  
+  
+<input id="myDataOrImage" type=text value="https://raw.githubusercontent.com/huggingface/huggingface.js/main/packages/inference/test/cats.png" size=100  placeholder="https://raw.githubusercontent.com/huggingface/huggingface.js/main/packages/inference/test/cats.png" >
+<input type=button value="Load Data/Image" onclick="{
+ // myImageLoad('myDataOrImage') 
+  document.getElementById('myDataDisplay').src = document.getElementById('myDataOrImage').value
+                                                    
+/*     
+   //.then(r => r.json())
+   .then(r => myImg.src = r.primaryImage);
+
+                                                    
+                                         
+                                                    
+    const imageBlob = await fetchImage(url)
+  const imageBase64 = URL.createObjectURL(imageBlob)                                                  
+                                                    
+                                                    
+         */                                           
+                                                    
+}" > <br> <img id="myDataDisplay" width=300 src="https://raw.githubusercontent.com/huggingface/huggingface.js/main/packages/inference/test/cats.png" /><br>
+  
+  <a href="https://huggingface.co/models">HuggingFace Model Hub</a> label of the model to use: <input id="myModel" type=text value="facebook/detr-resnet-50" placeholder="facebook/detr-resnet-50">  
+  
+   
+<input type=button value="LOAD and Test Model"onclick="{
+    document.getElementById('myDiv01').innerHTML = ''
+    myHugginFaceLoad(document.getElementById('myEnteredToken').value,document.getElementById('myDataOrImage').value,document.getElementById('myModel').value ) 
+                                                       
+}"><br><br>
+  
+
+
+  <div id="myDiv01">...</div> 
+  <br><br>
+  
+  My Main Github <a href="https://github.com/hpssjellis/my-examples-of-huggingfacejs">here</a> and the index of demos <a href="index.html">here<a/>  <br>
+  By <a href="https://twitter.com/rocksetta">@rocksetta<a/> use at your own risk!<br>
+
+</body>
+</html>
