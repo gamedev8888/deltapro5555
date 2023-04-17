@@ -1,0 +1,34 @@
+<li><a href="hug06-template.html">hug06-template.html</a> A template for most of the pages to come (until I deprecate it)
+ <li><a href="hug07-object.html">hug07-object.html</a> Testing image object classification
+ <li><a href="hug08-webcam.html">hug08-webcam.html</a> May work on mobile, webcam image data to huggingface with boundingboxes (still has a few issues)
+
+<ul> Text based hugggingface models
+  <li><a href="hug09-00-text.html">hug09-00-text.html</a> Text style MASK using facebook/bart-large-cnn.
+  <li><a href="hug09-01-text.html">hug09-01-text.html</a> Text style summarization using facebook/bart-large-cnn
+  <li><a href="hug09-02-text.html">hug09-02-text.html</a> Text style question answer using deepset/roberta-base-squad2
+  <li><a href="hug02-03.html">hug02-03.html</a> Not sure of the point of this so left it in it's original form    
+  <li><a href="hug09-04-text.html">hug09-04-text.html</a> Text classification using distilbert-base-uncased-finetuned-sst-2-english
+   
+  <li><a href="hug09-05-text.html">hug09-05-text.html</a> Text Generation using GPT-2
+  <li><a href="hug09-06-text.html">hug09-06-text.html</a> Token Classification using dbmdz/bert-large-cased-finetuned-conll03-english
+  <li><a href="hug09-07-text.html">hug09-07-text.html</a> Text translation program from English to German (I think)
+  <li><a href="hug09-08-text.html">hug09-08-text.html</a> Text zero shot classification using facebook/bart-large-mnli
+  <li><a href="hug09-09-text.html">hug09-09-text.html</a> Conversational using microsoft/DialoGPT-large
+  <li><a href="hug09-10-text.html">hug09-10-text.html</a> Text Feacture Extraction using sentence-transformers/paraphrase-xlm-r-multilingual-v1
+    
+</ul>  
+<ul> Audio files
+  <li><a href="hug10-11-audio.html">hug10-11-audio.html</a> Now testing audio. AutoClassification
+  <li><a href="hug10-12-audio.html">hug10-12-audio.htm</a> Audio classification
+</ul>
+
+  <ul> Image Classification Examples
+<li><a href="hug11-13-image.html">hug11-13-image.html</a> Image classification using google/vit-base-patch16-224
+<li><a href="hug11-14-image.html">hug11-14-image.html</a> Object detection and location (same as my first attempts), using facebook/detr-resnet-50
+<li><a href="hug11-15-image.html">hug11-15-image.html</a> Segementation of objects, just gives the data using facebook/detr-resnet-50-panoptic
+<li><a href="hug11-15b.html">hug11-15b.html</a> Segementation of objects, this shows the objects in different colors using facebook/detr-resnet-50-panoptic and d3.js
+<li><a href="...">..</a>
+  </ul>
+Text to Image  
+<li><a href="hug16-text-to-image.html">hug16-text-to-image.html</a>  Testing text to image. This is really cool, takes a while but great results.
+</ul>  
