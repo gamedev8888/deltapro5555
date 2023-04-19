@@ -1,11 +1,18 @@
-Version 0.0.6
+Version 0.0.7<br>
+
+
 <h2 align=center>t1a05-taxes by Ayan</h2>
 
-<input id="myNum01" type=number value="4" ><br>
+Pay &/hour:<input id="myNum01" type=number value="15" >   
+Hours Worked:<input id="myNum02" type=number value="8" >   
 
-<input type=button value="4 squares = 16" onclick="{
-let myIn01 = parseFloat(document.getElementById('myNum01').value) 
-let myAnswer = myIn01 * myIn01
+
+<br>
+
+<input type=button value="Calculate Tax" onclick="{
+let myPay = parseFloat(document.getElementById('myNum01').value) 
+let myHours = parseFloat(document.getElementById('myNum02').value) 
+let myAnswer = myPay * myPay
 document.getElementById('myDiv01').innerHTML = myIn01 + ' squared = '+ myAnswer
 }"><br>
 
