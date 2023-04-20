@@ -5,14 +5,15 @@ Version 0.0.7<br>
 
 Pay &/hour:<input id="myNum01" type=number value="15" >   
 Hours Worked:<input id="myNum02" type=number value="8" >   
-
+Tax:<input id="MyNum03" type=number value="30" >
 
 <br>
 
 <input type=button value="Calculate Tax" onclick="{
 let myPay = parseFloat(document.getElementById('myNum01').value) 
 let myHours = parseFloat(document.getElementById('myNum02').value) 
-let myAnswer = myPay * myHours
+let myTax = parseFloat(document.getElementById('myNum03').value) 
+let myAnswer = myPay * myHours * MyTax
 document.getElementById('myDiv01').innerHTML = myPay + ' squared = '+ myAnswer
 }"><br>
 
