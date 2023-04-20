@@ -13,10 +13,10 @@ Tax:<input id="MyNum03" type=number value="30" >
 let myPay = parseFloat(document.getElementById('myNum01').value) 
 let myHours = parseFloat(document.getElementById('myNum02').value) 
 let myTax = parseFloat(document.getElementById('myNum03').value) 
-let myAnswer = myPay * myHours 
-myAnswer  = myPay * myHours = 120                                          
-myAnswer = myPay * myHours * myTax = 0.01 
-document.getElementById('myDiv01').innerHTML = myPay + ' squared = '+ myAnswer
+let myPayToday = myPay * myHours                                          
+let myTaxToday = myPay * myHours * myTax * 0.01 
+let myTakeHomeToday = myPayToday - myTaxToday                                                 
+document.getElementById('myDiv01').innerHTML = myPayToday + ', ' + myTaxToday + ', ' + myTakeHomeToday
 }"><br>
 
 <div id="myDiv01">...</div>
