@@ -106,7 +106,7 @@ function myCheckHit(){
 
 <input id="myText01" type=text value="" size=50 placeholder="Feedback here"><br>
 
-<input type=button value="Auto Background Left" onclick="{
+<input type=button value="Auto Background Left" style="background-color:yellow;  padding: 1px;" onclick="{
   clearInterval(myClock)
   let myTemp = '100px 0px'
   myClock = setInterval(function(){
@@ -118,19 +118,19 @@ function myCheckHit(){
 }">
 
 
-<input type=button value="Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+<input type=button value="Right" style="background-color:yellow;  padding: 1px;" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
   myCheckHit()     // checks for all collisions
 }">
 
-<input type=button value="Down" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+<input type=button value="Down" style="background-color:;  padding: 1px;" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
   document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
   myCheckHit()     // checks for all collisions
 }">
 
 
 
-<input type=button value="shoot" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+<input type=button value="shoot" style="background-color:yellow;  padding: 1px;" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
 if (myShooting > 2 ){myShooting = 1}
   // Bullet Number 2
 if (myShooting == 2){
