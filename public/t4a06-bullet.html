@@ -103,7 +103,26 @@ function myCheckHit(){
 
 
 <h1 align=center><font color=Yellow>T4A06 Bullet by Ayan</font></h1>
+<style> 
+@keyframes myfirst {
+  0%   {background: red; left: 0px; top: 0px;}
+  25%  {background: yellow; left: 200px; top: 0px;}
+  50%  {background: blue; left: 200px; top: 200px;}
+  75%  {background: green; left: 0px; top: 200px;}
+  100% {background: red; left: 0px; top: 0px;}
+}
+</style>
 
+<style> 
+@keyframes myfirst {
+  0%   {background: red; left: 0px; top: 0px;}
+  25%  {background: yellow; left: 200px; top: 0px;}
+  50%  {background: blue; left: 200px; top: 200px;}
+  75%  {background: green; left: 0px; top: 200px;}
+  100% {background: red; left: 0px; top: 0px;}
+}
+</style>
+   
 <input id="myText01" type=text value="" size=50 placeholder="Feedback here" style="background-color:yellow;  padding: 1px;"><br>
 
 <input type=button value="Auto Background Left" style="background-color:yellow;  padding: 1px;" onclick="{
@@ -168,3 +187,23 @@ if (myShooting == 1){
 
 <img id="myBullet01" src="https://static.wikia.nocookie.net/villains/images/7/7a/Bullet.png/revision/latest?cb=20200617045537"  style="position:absolute; width:10px; height:10px; left: 130px; top:190px;">
 <img id="myBullet02" src="myImgNew.jpg"  style="position:absolute; width:10px; height:10px; left: 150px; top:190px;">
+
+   <div id="myDiv01">...</div>
+   
+   <div style="  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: myfirst 5s 2;
+  animation-direction: alternate;
+  "></div>
+   
+   <div id="myDiv01">...</div>
+   
+   <div style="  width: 100px;
+  height: 100px;
+  background: red;
+  position: relative;
+  animation: myfirst 5s 2;
+  animation-direction: alternate;
+  "></div>
