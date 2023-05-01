@@ -37,11 +37,11 @@ You use loops and variables to make fast fancy drawings <br><br>
 }">
 
 <input type=button value="the triangle" onclick="{
-  context.beginPath();
-  context.moveTo(100, 100);
-  context.lineTo(100, 300);
-  context.lineTo(300, 300);
-  context.closePath();
+  myContext.beginPath();
+  myContext.moveTo(100, 100);
+  myContext.lineTo(100, 300);
+  myContext.lineTo(300, 300);
+  myContext.stroke();
 }">
 
 <input type=button value=".createLinearGradient(100, 300, 200, 400)" onclick="{
