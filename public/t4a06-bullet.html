@@ -147,11 +147,10 @@ function myCheckHit(){
   myCheckHit()     // checks for all collisions
 }">
 
-document.addEventListener("keydown", function(event) {
-  if (event.keyCode === 38) {
-    console.log("Up arrow key pressed");
-  }
-});
+<input type=button value="up" style="background-color:yellow;  padding: 1px;" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+  document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
+  myCheckHit()     // checks for all collisions
+}">
 
 
 <input type=button value="shoot" style="background-color:yellow;  padding: 1px;" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
