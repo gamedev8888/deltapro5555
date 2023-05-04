@@ -105,13 +105,12 @@ function myCheckHit(){
    if (event.key == 's') {   // s = go down
       document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
    }
-    
- <body onkeydown="{
+     if (event.key == 'w') {   // w = go up
+      document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px'
+   } 
+
     // previous code here
-    
-    if (event.key == 'w') {   // w = go up
-        document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
-    }
+  
 
   // put more here
  
