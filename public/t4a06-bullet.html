@@ -30,7 +30,7 @@ function myHitOther(my1,my2){
 
 function myCheckHit(){
    
-   /*
+  
    
    document.all.myText01.value = myScore  // show the present score
 
@@ -42,27 +42,27 @@ function myCheckHit(){
    
    
 
-   if ( myHitOther('myImg01','myImg03') ){
+   if ( myHitOther('myImg01','myImg02') ){
        //alert('you lose')
       document.getElementById('myImg01').style.left = '20px'
-      document.all.myText01.value = 'You hit myImg03'  
+      document.all.myText01.value = 'You hit myImg02'  
       myScore -= 1
    }   
 
 
 
 
-   if ( myHitOther('myBullet01','myImg03') ){
+   if ( myHitOther('myBullet01','myImg02') ){
       clearInterval(myGun01)
       document.getElementById('myBullet01').style.left = '-200px'
-      document.all.myText01.value = 'You shot myImg03'  
+      document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
    }   
    
-   if ( myHitOther('myBullet02','myImg03') ){
+   if ( myHitOther('myBullet02','myImg02') ){
       clearInterval(myGun02)
       document.getElementById('myBullet02').style.left = '-200px'
-      document.all.myText01.value = 'You shot myImg03'  
+      document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
    }   
    /*
