@@ -55,6 +55,7 @@ function myCheckHit(){
    if ( myHitOther('myBullet01','myImg02') ){
       clearInterval(myGun01)
       document.getElementById('myBullet01').style.left = '-200px'
+      document.getElementById('myImg02').src 'https://i.gifer.com/origin/d7/d7ac4f38b77abe73165d85edf2cbdb9e_w200.gif'
       document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
    }   
@@ -62,6 +63,7 @@ function myCheckHit(){
    if ( myHitOther('myBullet02','myImg02') ){
       clearInterval(myGun02)
       document.getElementById('myBullet02').style.left = '-200px'
+      document.getElementById('myImg02').src 'https://i.gifer.com/origin/d7/d7ac4f38b77abe73165d85edf2cbdb9e_w200.gif'
       document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
    }   
@@ -210,6 +212,7 @@ if (myShooting == 1){
 
 <img id="myBullet01" src="bullet.png"  style="position:absolute; width:20px; height:20px; left: 130px; top:190px;">
 <img id="myBullet02" src="bullet.png"  style="position:absolute; width:20px; height:20px; left: 130px; top:190px;">
+<img id="myBlock01" src="https://static.wikia.nocookie.net/shivaxis-rlcraft/images/8/8e/Planks.gif/revision/latest?cb=20220831204241" style="position:absolute; width:200; height:200; left:150; top:200; animation: myfirst 5s 2;animation-direction: alternate;">
 <br>
 <br>  
 <br>
