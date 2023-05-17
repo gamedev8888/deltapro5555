@@ -159,7 +159,15 @@ myCheckHit()   // checks for all collisions
       myTemp =  myGlobalX + 'px 0px'
       document.getElementById('myBody').style.backgroundPosition = myTemp
   }, 100)
-    
+
+  <input type=button value="Auto Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+
+  clearInterval(myPlank01)
+  clearInterval(myplank01)
+  myTimer01 = setInterval(function(){
+     document.getElementById('myPlank01').style.left = parseInt(document.getElementById('myPlank01').style.left) + myHorizontalSpeed + 'px'
+     myCheckHit()     // checks for all collisions
+  }, 50)    
 }">
 
 <input type=button value="Right" style="background-color:yellow;  padding: 1px;" onTouchStart="{this.click(); (event.preventDefault();}" onclick="{
