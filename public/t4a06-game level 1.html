@@ -4,10 +4,12 @@
 
    let myGlobalX = 0
    let myClock
+   let myBounce
    let myScore = 10
    let myGun01
    let myGun02
    let myShooting = 1
+   let myVerticalSpeed = 5
 
    // global functions here
 function myHitOther(my1,my2){
@@ -136,19 +138,8 @@ myCheckHit()   // checks for all collisions
 
 
 <h1 align=center><font color=Yellow>T4A06 game level 1</font></h1>
-<style> 
- @keyframes updown {
-  0% {
-    top: 100px;
-  }
-  50% {
-    top: 300px;
-  }
-  100% {
-    top: 100px;
-  }
-}  
-</style>
+   
+
 <input id="myText01" type=text value="Auto Background Left" size=50 placeholder="Feedback here" style="background-color:yellow;  padding: 1px;"><br>
 
 <input type=button value="Auto Background Left" style="background-color:yellow;  padding: 1px;" onclick="{
@@ -162,10 +153,9 @@ myCheckHit()   // checks for all collisions
 
   <input type=button value="Auto Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
 
-  clearInterval(myPlank01)
-  clearInterval(myplank01)
+  clearInterval(myBounce)
   myTimer01 = setInterval(function(){
-     document.getElementById('myPlank01').style.left = parseInt(document.getElementById('myPlank01').style.left) + myHorizontalSpeed + 'px'
+     document.getElementById('myPlank01').style.top = parseInt(document.getElementById('myPlank01').style.top) + myVerticalSpeed + 'px'
      myCheckHit()     // checks for all collisions
   }, 50)    
 }">
