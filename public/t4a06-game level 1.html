@@ -48,28 +48,24 @@ function myCheckHit(){
       document.all.myText01.value = 'You hit myImg02'  
       myScore -= 1
    }   
-
-
-
-
-   if ( myHitOther('myBullet01','myImg02') ){
-      clearInterval(myGun01)
-      document.getElementById('myBullet01').style.left = '-200px'
-      document.getElementById('myImg02').src = 'https://i.gifer.com/origin/d7/d7ac4f38b77abe73165d85edf2cbdb9e_w200.gif'
-      document.all.myText01.value = 'You shot myImg02'  
-      myScore += 1
-   }   
-   
-   if ( myHitOther('myBullet02','myImg02') ){
-      clearInterval(myGun02)
-      document.getElementById('myBullet02').style.left = '-200px'
-      document.getElementById('myImg02').src = 'https://i.gifer.com/origin/d7/d7ac4f38b77abe73165d85edf2cbdb9e_w200.gif'
-      document.all.myText01.value = 'You shot myImg02'  
-      myScore += 1
-   }   
    
 
   
+   if ( myHitOther('myBullet01','myPlank01') ){
+      clearInterval(myGun01)
+      document.getElementById('myBullet01').style.left = '-200px'
+      alert('Sorry you lose')
+      document.all.myText01.value = 'You shot myImg02'  
+      myScore += 1
+   }   
+   
+   if ( myHitOther('myBullet02','myPlank01') ){
+      clearInterval(myGun02)
+      document.getElementById('myBullet02').style.left = '-200px'
+      document.all.myText01.value = 'You shot myImg02'  
+      myScore += 1
+   }   
+   
    //you LOSE refresh the page
    if (myScore <= 0){
     document.all.myText01.value = 'You Lose scrore at zero!'  
