@@ -12,6 +12,10 @@
    let myVerticalSpeed = 5
    let myTimer01
    let myTimer02
+   
+   
+   
+   
    // global functions here
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -104,12 +108,11 @@ function myCheckHit(){
    }
   
   // far right bounce
-  if( parseInt(document.getElementById('myBlock01').style.top) <= window.innerheight + document.getElementById('myBlock01').height ){
+  if( parseInt(document.getElementById('myBlock01').style.top) >= window.innerheight ){
       myVerticalSpeed = myVerticalSpeed * -1
-     alert("hit the right side")
+      alert("hit the right side")
    }
 
-    //more if statements here
 
 
 
@@ -230,6 +233,7 @@ if (myShooting == 1){
   clearInterval(myTimer02)
   myTimer01 = setInterval(function(){
      document.getElementById('myBlock01').style.top = parseInt(document.getElementById('myBlock01').style.top) + myVerticalSpeed + 'px'
+                                                                                                                 
      myCheckHit()     // checks for all collisions
   }, 50)
 
