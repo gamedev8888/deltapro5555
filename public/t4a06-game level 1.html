@@ -68,7 +68,7 @@ function myCheckHit(){
       document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
    }   
-   if ( myHitOther('myBullet01','myPlank01') ){
+   if ( myHitOther('myBullet01','myBlock01') ){
       clearInterval(myGun01)
       document.getElementById('myBullet01').style.left = '-200px'
       alert('Sorry you lose')
@@ -76,7 +76,7 @@ function myCheckHit(){
       myScore += 1
    }   
    
-   if ( myHitOther('myBullet02','myPlank01') ){
+   if ( myHitOther('myBullet02','myBlock01') ){
       clearInterval(myGun02)
       document.getElementById('myBullet02').style.left = '-200px'
       document.all.myText01.value = 'You shot myImg02'  
@@ -231,7 +231,7 @@ if (myShooting == 1){
   myTimer01 = setInterval(function(){
      document.getElementById('myBlock01').style.top = parseInt(document.getElementById('myBlock01').style.top) + myVerticalSpeed + 'px'
      myCheckHit()     // checks for all collisions
-  }, 10)
+  }, 50)
 
                                                                                                                   
                                                                                                                   }">
