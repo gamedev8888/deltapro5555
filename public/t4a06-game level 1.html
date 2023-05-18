@@ -10,7 +10,6 @@
    let myGun02
    let myShooting = 1
    let myVerticalSpeed = 5
-
    // global functions here
 function myHitOther(my1,my2){
    left1   = parseInt(document.getElementById(my1).style.left)
@@ -97,6 +96,16 @@ function myCheckHit(){
       document.getElementById('myImg01').style.left = '20px'
       location = 'https://www.google.ca'
    }
+  if( parseInt(document.getElementById('myBlock01').style.top) > window.innerheight - document.getElementById('myBlock01').height ){
+      myVerticalSpeed *= -1
+     alert("hit the left side")
+   }
+  
+  // far right bounce
+  if( parseInt(document.getElementById('myBlock01').style.top) < window.innerheight + document.getElementById('myBlock01').height ){
+      myVerticalSpeed = myVerticalSpeed * -1
+     alert("hit the right side")
+   }
 
     //more if statements here
 
@@ -104,7 +113,6 @@ function myCheckHit(){
 
 
 }
-
 
 </script>
 
@@ -150,14 +158,6 @@ myCheckHit()   // checks for all collisions
       myTemp =  myGlobalX + 'px 0px'
       document.getElementById('myBody').style.backgroundPosition = myTemp
   }, 100)
-
-  <input type=button value="Auto Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
-
-  clearInterval(myBounce)
-  myTimer01 = setInterval(function(){
-     document.getElementById('myPlank01').style.top = parseInt(document.getElementById('myPlank01').style.top) + myVerticalSpeed + 'px'
-     myCheckHit()     // checks for all collisions
-  }, 50)    
 }">
 
 <input type=button value="Right" style="background-color:yellow;  padding: 1px;" onTouchStart="{this.click(); (event.preventDefault();}" onclick="{
@@ -222,7 +222,17 @@ if (myShooting == 1){
 
 <img id="myBullet01" src="bullet.png"  style="position:absolute; width:20px; height:20px; left: 130px; top:190px;">
 <img id="myBullet02" src="bullet.png"  style="position:absolute; width:20px; height:20px; left: 130px; top:190px;">
-<img id="myBlock01" src="Planks.gif" style="position:absolute; width:100; height:100; left:150; top:200; animation: updown 1s ease-in-out infinite;">
+<img id="myBlock01" src="Planks.gif" style="position:absolute; width:100; height:100; left:150; top:200;" onLoad="{
+ 
+  clearInterval(myTimer01)
+  clearInterval(myTimer02)
+  myTimer01 = setInterval(function(){
+     document.getElementById('myBlock01').style.top = parseInt(document.getElementById('myBlock01').style.top) + myVerticalSpeed + 'px'
+     myCheckHit()     // checks for all collisions
+  }, 50)
+
+                                                                                                                  
+                                                                                                                  }">
 <br>
 <br>  
 <br>
