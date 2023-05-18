@@ -98,13 +98,13 @@ function myCheckHit(){
       document.getElementById('myImg01').style.left = '20px'
       location = 'https://www.google.ca'
    }
-  if( parseInt(document.getElementById('myBlock01').style.top) > window.innerheight - document.getElementById('myBlock01').height ){
+  if( parseInt(document.getElementById('myBlock01').style.top) >= window.innerheight ){
       myVerticalSpeed *= -1
      alert("hit the left side")
    }
   
   // far right bounce
-  if( parseInt(document.getElementById('myBlock01').style.top) < window.innerheight + document.getElementById('myBlock01').height ){
+  if( parseInt(document.getElementById('myBlock01').style.top) <= window.innerheight + document.getElementById('myBlock01').height ){
       myVerticalSpeed = myVerticalSpeed * -1
      alert("hit the right side")
    }
