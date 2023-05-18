@@ -41,13 +41,14 @@ function myCheckHit(){
    
    document.all.myText01.value = myScore  // show the present score
    
-   
+      console.log(document.getElementById('myBlock01').style.top)  
+   console.log(window.innerheight)
    
   
   // far right bounce
   if( parseInt(document.getElementById('myBlock01').style.top) >= window.innerheight ){
       myVerticalSpeed = myVerticalSpeed * -1
-     console.log(document.getElementById('myBlock01').style.top)
+
       alert("hit the bottom")
    }
 
