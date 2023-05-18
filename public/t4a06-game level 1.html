@@ -41,17 +41,21 @@ function myCheckHit(){
    
    document.all.myText01.value = myScore  // show the present score
    
-      console.log(document.getElementById('myBlock01').style.top)  
+    //  console.log(document.getElementById('myBlock01').style.top)  
   // console.log(window.innerheight)
    
   
-  // far right bounce
-  if( parseInt(document.getElementById('myBlock01').style.top) >= 900 ){
+  // far bottom bounce
+  if( parseInt(document.getElementById('myBlock01').style.top) >= 700 ){
       myVerticalSpeed = myVerticalSpeed * -1
-
-      alert("hit the bottom")
+     // alert("hit the bottom")
    }
-
+  
+  // far top bounce
+  if( parseInt(document.getElementById('myBlock01').style.top) <=100){
+      myVerticalSpeed = myVerticalSpeed * -1
+     // alert("hit the bottom")
+   }
    
 
    if ( myHitOther('myImg01','myImg02') ){
