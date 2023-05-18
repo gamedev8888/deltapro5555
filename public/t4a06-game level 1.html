@@ -75,7 +75,6 @@ function myCheckHit(){
    if ( myHitOther('myBullet01','myBlock01') ){
       clearInterval(myGun01)
       document.getElementById('myBullet01').style.left = '-200px'
-      alert('Sorry you lose')
       document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
    }   
