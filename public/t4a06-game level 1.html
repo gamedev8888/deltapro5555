@@ -89,7 +89,7 @@ function myCheckHit(){
    
    //you LOSE refresh the page
    if (myScore <= 0){
-    document.all.myText01.value = 'You Lose scrore at zero!'  
+    document.all.myText01.value = 'You Lose score at zero!'  
     alert('Sorry you lose')
     location.reload()
    }
@@ -110,7 +110,8 @@ function myCheckHit(){
   // far right bounce
   if( parseInt(document.getElementById('myBlock01').style.top) >= window.innerheight ){
       myVerticalSpeed = myVerticalSpeed * -1
-      alert("hit the right side")
+     console.log(document.getElementById('myBlock01').style.top)
+      alert("hit the bottom")
    }
 
 
