@@ -40,6 +40,18 @@ function myCheckHit(){
   
    
    document.all.myText01.value = myScore  // show the present score
+   
+   
+   
+  
+  // far right bounce
+  if( parseInt(document.getElementById('myBlock01').style.top) >= window.innerheight ){
+      myVerticalSpeed = myVerticalSpeed * -1
+     console.log(document.getElementById('myBlock01').style.top)
+      alert("hit the bottom")
+   }
+
+   
 
    if ( myHitOther('myImg01','myImg02') ){
       document.getElementById('myImg01').style.left = '20px'
@@ -100,17 +112,6 @@ function myCheckHit(){
        alert('You Win, now go to the next level')
       document.getElementById('myImg01').style.left = '20px'
       location = 'https://www.google.ca'
-   }
-  if( parseInt(document.getElementById('myBlock01').style.top) >= window.innerheight ){
-      myVerticalSpeed *= -1
-     alert("hit the left side")
-   }
-  
-  // far right bounce
-  if( parseInt(document.getElementById('myBlock01').style.top) >= window.innerheight ){
-      myVerticalSpeed = myVerticalSpeed * -1
-     console.log(document.getElementById('myBlock01').style.top)
-      alert("hit the bottom")
    }
 
 
