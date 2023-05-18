@@ -33,7 +33,43 @@ function myHitOther(my1,my2){
        return true
    }
 }
+function myShoot() {
+if (myShooting > 2 ){myShooting = 1}
 
+
+
+
+  // Bullet Number 2
+if (myShooting == 2){
+  myShooting += 1
+  document.getElementById('myBullet01').style.left = document.getElementById('myImg01').style.left
+  document.getElementById('myBullet02').style.top  = document.getElementById('myImg01').style.top
+  clearInterval(myGun02)
+  myGun02 = setInterval(function(){
+     document.getElementById('myBullet02').style.left = parseInt(document.getElementById('myBullet02').style.left) + 10 + 'px'
+     myCheckHit() 
+  }, 20)   // speed of bullet faster lower number
+}
+
+
+
+
+  // Bullet Number 1
+if (myShooting == 1){
+  myShooting += 1
+  document.getElementById('myBullet01').style.left = document.getElementById('myImg01').style.left
+  document.getElementById('myBullet01').style.top  = document.getElementById('myImg01').style.top
+  clearInterval(myGun01)
+  myGun01 = setInterval(function(){
+     document.getElementById('myBullet01').style.left = parseInt(document.getElementById('myBullet01').style.left) + 10 + 'px'
+     myCheckHit() 
+  }, 20)   // speed of bullet faster lower number
+}
+
+
+
+
+}
 
 function myCheckHit(){
    
@@ -135,6 +171,9 @@ function myCheckHit(){
    if (event.key == 'd') {  // d = go right
      document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
    }   
+   if (event.key == 'Enter') {  // 
+     myShoot();
+   }  
    if (event.key == 's') {   // s = go down
       document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
    }
