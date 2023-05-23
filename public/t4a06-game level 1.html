@@ -112,15 +112,15 @@ function myCheckHit(){
 
      if ( myHitOther('myBullet01','myImg02') ){
       clearInterval(myGun01)
-      alert('You win you go to next level')
+    //  alert('You win you go to next level')
       document.getElementById('myImg02').src = 'https://i.gifer.com/YQDj.gifc'
       document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
       location = 'https://www.google.ca'
      
-    //setTimeout(function(){
-       // document.getElementById('myImg02').src.style.left = '-200px'    
-    // }, 2000);
+    setTimeout(function(){
+        document.getElementById('myImg02').src.style.left = '-200px'    
+     }, 2000);
           
       
       
@@ -128,14 +128,14 @@ function myCheckHit(){
    
    if ( myHitOther('myBullet02','myImg02') ){
       clearInterval(myGun02)
-      alert('You win you go to next level')
+     // alert('You win you go to next level')
       document.getElementById('myImg02').src = 'https://i.gifer.com/YQDj.gifc'
       document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
       location = 'https://www.google.ca'
-      //setTimeout(function(){
-        //document.getElementById('myImg02').src.style.left = '-200px'    
-     //}, 2000);
+      setTimeout(function(){
+        document.getElementById('myImg02').src.style.left = '-200px'    
+     }, 2000);
               
       
       
