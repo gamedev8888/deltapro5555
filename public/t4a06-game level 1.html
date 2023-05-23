@@ -112,34 +112,34 @@ function myCheckHit(){
     
      if ( myHitOther('myBullet01','myImg02') ){
       clearInterval(myGun01)
-     alert('You win you go to next level')
      document.getElementById('myImg02').src = 'https://i.gifer.com/YQDj.gifc'
-     document.getElementById('myImg02').src.style.left = '-200px'    
+
      document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
       //location = 'https://www.google.ca'
      
     setTimeout(function(){
-         
+          document.getElementById('myImg02').src.style.left = '-200px'    
     }, 2000);
           
-      
+   
+     alert('You win you go to next level')   
       
    }   
    
    if ( myHitOther('myBullet02','myImg02') ){
       clearInterval(myGun02)
-      alert('You win you go to next level')
-      document.getElementById('myImg02').src.style.left = '-200px'
+
       document.getElementById('myImg02').src = 'https://i.gifer.com/YQDj.gifc'
       document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
       //location = 'https://www.google.ca'
       setTimeout(function(){
-            
+             document.getElementById('myImg02').src.style.left = '-200px'     
      }, 2000);
               
       
+      alert('You win you go to next level')
       
    }   
    
@@ -210,7 +210,7 @@ myCheckHit()   // checks for all collisions
 
 
 
-<h1 align=center><font color=Yellow>T4A06 game level 1 b</font></h1>
+<h1 align=center><font color=Yellow>T4A06 game level 1 </font></h1>
 
 
 <input id="myText01" type=text value="Auto Background Left" size=50 placeholder="Feedback here" style="background-color:yellow;  padding: 1px;"><br>
