@@ -96,7 +96,7 @@ function myCheckHit(){
 
    
 
-   if ( myHitOther('myImg01','myImg02') ){
+   if ( myHitOther('myImg01','myBlock01') ){
        alert('you lose')
       document.getElementById('myImg01').style.left = '20px'
       document.all.myText01.value = 'You hit myImg02'  
@@ -108,18 +108,18 @@ function myCheckHit(){
       clearInterval(myGun01)
       clearInterval(myGun02)
      document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
-
+     location = 'https://www.google.ca'
      document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
-      //location = 'https://www.google.ca'
+      
      
 
         
         
-    setTimeout(() => {
-          document.getElementById('myImg02').src.style.left = '-200px'  
-          window.location = 'https://www.google.ca'
-    }, 2000);    
+    //setTimeout(() => {
+         // document.getElementById('myImg02').src.style.left = '-200px'  
+         // window.location = 'https://www.google.ca'
+   // }, 2000);    
           
    
   //   alert('You win you go to next level')   
@@ -132,11 +132,11 @@ function myCheckHit(){
       document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
       document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
-      //location = 'https://www.google.ca'
-    setTimeout(() => {
-          document.getElementById('myImg02').src.style.left = '-200px'  
-          window.location = 'https://www.google.ca'
-    }, 2000);    
+      location = 'https://www.google.ca'
+    //setTimeout(() => {
+         // document.getElementById('myImg02').src.style.left = '-200px'  
+         // window.location = 'https://www.google.ca'
+   // }, 2000);    
               
       
   //    alert('You win you go to next level')
