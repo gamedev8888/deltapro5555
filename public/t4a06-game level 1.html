@@ -107,7 +107,8 @@ function myCheckHit(){
      if ( myHitOther('myBullet01','myImg02') ){
       clearInterval(myGun01)
       clearInterval(myGun02)
-      document.getElementById('myImg02').src.style.top = '500px'  
+      document.getElementById('myBullet01').src.style.left = '1500px'  
+      document.getElementById('myBullet02').src.style.left = '1500px'  
      document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
      location = 'https://www.google.ca'
      document.all.myText01.value = 'You shot myImg02'  
@@ -130,15 +131,16 @@ function myCheckHit(){
    if ( myHitOther('myBullet02','myImg02') ){
       clearInterval(myGun02)
       clearInterval(myGun01)
-      document.getElementById('myImg02').src.style.top = '500px'  
+      document.getElementById('myBullet01').src.style.left = '1500px'  
+      document.getElementById('myBullet02').src.style.left = '1500px'  
       document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
       document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
-      location = 'https://www.google.ca'
-    //setTimeout(() => {
-         // document.getElementById('myImg02').src.style.left = '-200px'  
-         // window.location = 'https://www.google.ca'
-   // }, 2000);    
+     // location = 'https://www.google.ca'
+   let myFred =  setTimeout(() => {
+          document.getElementById('myImg02').src.style.left = '-200px'  
+          window.location = 'https://www.google.ca'
+   }, 2000);    
               
       
   //    alert('You win you go to next level')
@@ -212,7 +214,7 @@ myCheckHit()   // checks for all collisions
 
 
 
-<h1 align=center><font color=Yellow>T4A06 game level 1 V1</font></h1>
+<h1 align=center><font color=Yellow>T4A06 game level 1 V2</font></h1>
 
 
 <input id="myText01" type=text value="Auto Background Left" size=50 placeholder="Feedback here" style="background-color:yellow;  padding: 1px;"><br>
