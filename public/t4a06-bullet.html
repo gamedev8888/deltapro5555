@@ -4,12 +4,17 @@
 
    // global variables here
 
-   let myGlobalX = 0
+    let myGlobalX = 0
    let myClock
+   let myBounce
    let myScore = 10
    let myGun01
    let myGun02
    let myShooting = 1
+   let myVerticalSpeed = 5
+   let myTimer01
+   let myTimer02
+   
 
    // global functions here
 function myHitOther(my1,my2){
@@ -39,7 +44,7 @@ function myCheckHit(){
       myScore -= 1
    }   
    
-   if ( myHitOther('myImg01','myImg03') ){
+   if ( myHitOther('myImg01','myBlock01') ){
        //alert('you lose')
       document.getElementById('myImg01').style.left = '20px'
       document.all.myText01.value = 'You hit myImg03'  
@@ -53,10 +58,10 @@ function myCheckHit(){
       myScore += 1
    }   
    
-   if ( myHitOther('myBullet02','myImg03') ){
+   if ( myHitOther('myBullet02','myImg01') ){
       clearInterval(myGun02)
       document.getElementById('myBullet02').style.left = '-200px'
-      document.all.myText01.value = 'You shot myImg03'  
+      document.all.myText01.value = 'You shot myImg02'  
       myScore += 1
    }   
    
@@ -71,8 +76,8 @@ function myCheckHit(){
 
    // YOU WIN and go to next level!
 
-   if ( myHitOther('myImg01','myImg04') ){
-      document.all.myText01.value = 'You hit myImg04 and you win the game!'  
+   if ( myHitOther('myImg01','myImg02') ){
+      document.all.myText01.value = 'You hit myImg02 and you win the game!'  
        alert('You Win, now go to the next level')
       document.getElementById('myImg01').style.left = '20px'
       location = 'https://www.google.ca'
