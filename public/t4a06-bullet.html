@@ -35,58 +35,96 @@ function myHitOther(my1,my2){
 }
 
 
-function myCheckHit(){
-   document.all.myText01.value = myScore  // show the present score
 
-   if ( myHitOther('myImg01','myBlock01') ){
-      document.getElementById('myImg01').style.left = '20px'
-      document.all.myText01.value = 'You hit myBlock01'  
-      myScore -= 1
-   }   
+function myCheckHit(){
    
+  
+   
+   document.all.myText01.value = myScore  // show the present score
+   
+  
+   
+  
+  // far bottom bounce
+  if( parseInt(document.getElementById('myBlock01').style.top) >= 700 ){
+      myVerticalSpeed = myVerticalSpeed * -1
+     // alert("hit the bottom")
+   }
+  
+  // far top bounce
+  if( parseInt(document.getElementById('myBlock01').style.top) <= 10){
+      myVerticalSpeed = myVerticalSpeed * -1
+     // alert("hit the bottom")
+   }
+   
+
+   
+
    if ( myHitOther('myImg01','myBlock01') ){
        alert('you lose')
       document.getElementById('myImg01').style.left = '20px'
-      document.all.myText01.value = 'You hit myBlock01'  
+      document.all.myText01.value = 'You hit myImg02'  
       myScore -= 1
    }   
+   
+    
+     if ( myHitOther('myBullet01','myImg02') ){
+      clearInterval(myGun01)
+     document.getElementById('myBullet01').src.style.left = '1500px'  
+     document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
+     document.all.myText01.value = 'You shot myImg02'  
+      myScore += 1
+      
+     
 
-   if ( myHitOther('myBullet01','myImg02') ){
+        
+        
+    
+   }   
+   
+   if ( myHitOther('myBullet02','myImg02') ){
+      clearInterval(myGun02)
+      clearInterval(myGun01)
+      document.getElementById('myBullet01').src.style.left = '1500px'  
+      document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
+      document.all.myText01.value = 'You shot myImg02'  
+      myScore += 1
+   
+      
+   }   
+   
+   
+   if ( myHitOther('myBullet01','myBlock01') ){
       clearInterval(myGun01)
       document.getElementById('myBullet01').style.left = '-200px'
-      document.all.myText01.value = 'You shot myImg02'  
+      document.all.myText01.value = 'You shot myBlock01'  
       myScore += 1
    }   
    
-   if ( myHitOther('myBullet01','myImg02') ){
+   if ( myHitOther('myBullet02','myBlock01') ){
       clearInterval(myGun02)
-      document.getElementById('myBullet01').style.left = '-200px'
-      document.all.myText01.value = 'You shot myImg02'  
+      document.getElementById('myBullet02').style.left = '-200px'
+      document.all.myText01.value = 'You shot myBlock01'  
       myScore += 1
-   }   
+     
+ }   
    
-
-   
-  // you LOSE refresh the page
+   //you LOSE refresh the page
    if (myScore <= 0){
-    document.all.myText01.value = 'You Lose scrore at zero!'  
+    document.all.myText01.value = 'You Lose score at zero!'  
     alert('Sorry you lose')
     location.reload()
    }
 
-   // YOU WIN and go to next level!
+   //YOU WIN and go to next level!
 
-   if ( myHitOther('myImg01','myImg02') ){
-      document.all.myText01.value = 'You hit myImg02 and you win the game!'  
-       alert('You Win, now go to the next level')
-      document.getElementById('myImg01').style.left = '20px'
-      location = 'https://www.google.ca'
-   }
 
-   // more if statements here
+
+
+
+
 
 }
-
 
 </script>
 
