@@ -67,13 +67,13 @@
 
         function handleKeyDown(event) {
             const keyCode = event.keyCode;
-            if (keyCode === 68) { // d = go right
+            if (keyCode === d) {  d = go right
                 moveRight();
-            } else if (keyCode === 13) { // Enter key
+            } else if (keyCode === Enter) {  Enter key
                 shoot();
-            } else if (keyCode === 83) { // s = go down
+            } else if (keyCode === s) {  s = go down
                 moveDown();
-            } else if (keyCode === 87) { // w = go up
+            } else if (keyCode === w) {  w = go up
                 moveUp();
             }
         }
