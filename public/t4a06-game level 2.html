@@ -52,32 +52,33 @@
 
     <script>
         let myGlobalX = 0;
-        let myScore = 10;
-        let myShooting = 1;
-        let myVerticalSpeed = 5;
-        let myGun01;
-        let myGun02;
+let myScore = 10;
+let myShooting = 1;
+let myVerticalSpeed = 5;
+let myGun01;
+let myGun02;
 
-        function initializeGame() {
-            document.addEventListener('keydown', handleKeyDown);
-            document.getElementById('myBullet01').style.left = '-200px';
-            document.getElementById('myBullet02').style.left = '-200px';
-            setInterval(moveBlock, 50);
-        }
+function initializeGame() {
+  document.addEventListener('keydown', handleKeyDown);
+  document.getElementById('myBullet01').style.left = '-200px';
+  document.getElementById('myBullet02').style.left = '-200px';
+  setInterval(moveBlock, 50);
+}
 
-        function handleKeyDown(event) {
-            const keyCode = event.keyCode;
-            if (keyCode === d) {  d = go right
-                moveRight();
-            } else if (keyCode === Enter) {  Enter key
-                shoot();
-            } else if (keyCode === s) {  s = go down
-                moveDown();
-            } else if (keyCode === w) {  w = go up
-                moveUp();
-            }
-        }
+function handleKeyDown(event) {
+  const keyCode = event.keyCode;
+  if (keyCode === 68) { // 68 corresponds to 'D' key
+    moveRight();
+  } else if (keyCode === 13) { // 13 corresponds to 'Enter' key
+    shoot();
+  } else if (keyCode === 83) { // 83 corresponds to 'S' key
+    moveDown();
+  } else if (keyCode === 87) { // 87 corresponds to 'W' key
+    moveUp();
+  }
+}
 
-        function moveRight() {
-            const myImg01 = document.getElementById('myImg01');
-            myImg01.style.left = parseInt(myImg01.style.left) +
+function moveRight() {
+  const myImg01 = document.getElementById('myImg01');
+  myImg01.style.left = parseInt(myImg01.style.left) + 5 + 'px'; // Add the desired amount of pixels to move right
+}
