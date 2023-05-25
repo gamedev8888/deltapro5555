@@ -70,10 +70,11 @@ function myCheckHit(){
     
      if ( myHitOther('myBullet01','myImg02') ){
       clearInterval(myGun01)
-     document.getElementById('myBullet01').style.left = '1500px'  
-     document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
-     document.all.myText01.value = 'You shot myImg02'
-     location = 't4a06-game level 2.html'
+      document.getElementById('myBullet01').style.left = '1500px'  
+      document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
+      document.all.myText01.value = 'You shot myImg02'
+      alert('YOU WIN GO TO THE NEXT LEVEL')
+      location = 't4a06-game level 2.html'
       myScore += 1
       
      
@@ -89,6 +90,7 @@ function myCheckHit(){
       document.getElementById('myBullet01').style.left = '1500px'  
       document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
       document.all.myText01.value = 'You shot myImg02'  
+      alert('YOU WIN GO TO THE NEXT LEVEL')
       location = 't4a06-game level 2.html'
       myScore += 1
    
