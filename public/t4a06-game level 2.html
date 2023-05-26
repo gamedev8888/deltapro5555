@@ -94,9 +94,10 @@ function myCheckHit(){
    }   
      if ( myHitOther('myBullet01','myImg03') ){
       clearInterval(myGun01)
-     document.getElementById('myBullet01').style.left = '1500px'  
-     document.getElementById('myImg03').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
-     document.all.myText01.value = 'You shot myImg03'  
+      alert('you win')
+      document.getElementById('myBullet01').style.left = '1500px'  
+      document.getElementById('myImg03').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
+      document.all.myText01.value = 'You shot myImg03'  
       myScore += 1
       
      
@@ -109,6 +110,7 @@ function myCheckHit(){
    if ( myHitOther('myBullet02','myImg03') ){
       clearInterval(myGun02)
       clearInterval(myGun01)
+      alert('you win')
       document.getElementById('myBullet02').style.left = '1500px'  
       document.getElementById('myImg03').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
       document.all.myText01.value = 'You shot myImg03'  
