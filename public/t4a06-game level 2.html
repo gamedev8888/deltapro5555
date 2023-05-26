@@ -92,6 +92,30 @@ function myCheckHit(){
    
       
    }   
+     if ( myHitOther('myBullet01','myImg03') ){
+      clearInterval(myGun01)
+     document.getElementById('myBullet01').style.left = '1500px'  
+     document.getElementById('myImg03').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
+     document.all.myText01.value = 'You shot myImg03'  
+      myScore += 1
+      
+     
+
+        
+        
+    
+   }   
+   
+   if ( myHitOther('myBullet02','myImg03') ){
+      clearInterval(myGun02)
+      clearInterval(myGun01)
+      document.getElementById('myBullet02').style.left = '1500px'  
+      document.getElementById('myImg03').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
+      document.all.myText01.value = 'You shot myImg03'  
+      myScore += 1
+   
+      
+   }   
    
    
    if ( myHitOther('myBullet01','myBlock01') ){
@@ -165,7 +189,7 @@ if (myShooting == 1){
 
 
 
-<body id="myBody" style="background-repeat:repeat; background-size: 80%" background="https://www.gifcen.com/wp-content/uploads/2022/04/wallpaper-gif-4.gif"  onkeydown="{
+<body id="myBody" background="https://www.gifcen.com/wp-content/uploads/2022/04/wallpaper-gif-4.gif"  onkeydown="{
    document.all.myText01.value = event.key
    if (event.key == 'd') {  // d = go right
      document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
@@ -264,9 +288,8 @@ if (myShooting == 1){
 
 
 <img id="myImg01" src="output-onlinegiftools.gif"  style="position:absolute; width:100px; height:80px; left: 10px; top:190px;">
-<img id="myImg01" src="output-onlinegiftools.gif"  style="position:absolute; width:100px; height:80px; left: 10px; top:190px;">
 <img id="myImg02" src="boat.png" style="position:absolute; width:100px; height:80px; left:350px; top:190px;">
-<img id="myImg02" src="boat.png" style="position:absolute; width:100px; height:80px; left:350px; top:190px;">
+<img id="myImg03" src="boat.png" style="position:absolute; width:100px; height:80px; left:350px; top:390px;">
                                      
 
 
