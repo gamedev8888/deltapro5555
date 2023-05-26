@@ -60,9 +60,9 @@ function myCheckHit(){
 
    
 
-   if ( myHitOther('myImg03','myBlock01') ){
+   if ( myHitOther('myImg01','myBlock01') ){
        alert('you lose')
-      document.getElementById('myImg03').style.left = '20px'
+      document.getElementById('myImg01').style.left = '20px'
       document.all.myText01.value = 'You hit myImg02'  
       myScore -= 1
    }   
@@ -120,6 +120,7 @@ function myCheckHit(){
    
    if ( myHitOther('myBullet01','myBlock01') ){
       clearInterval(myGun01)
+      alert('you lose')
       document.getElementById('myBullet01').style.left = '-200px'
       document.all.myText01.value = 'You shot myBlock01'  
       myScore += 1
