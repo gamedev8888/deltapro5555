@@ -201,9 +201,9 @@ myCheckHit()   // checks for all collisions
 
 <h1 align=center><font color=Yellow>game level 1</font></h1>
 
-<input id="myText01" type=text value="" size=50 placeholder="Feedback here"><br>
+<input id="myText01" type=text value="" style="background-color:yellow;  padding: 1px;"size=50 placeholder="Feedback here"><br>
 
-<input type=button value="Auto Background Left" onclick="{
+<input type=button value="Auto Background Left"style="background-color:yellow;  padding: 1px;" onclick="{
   clearInterval(myClock)
   let myTemp = '100px 0px'
   myClock = setInterval(function(){
@@ -215,19 +215,19 @@ myCheckHit()   // checks for all collisions
 }">
 
 
-<input type=button value="Right" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+<input type=button value="Right" onTouchStart="{this.click(); event.preventDefault();}" style="background-color:yellow;  padding: 1px;"onclick="{
   document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
   myCheckHit()     // checks for all collisions
 }">
 
-<input type=button value="Down" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+<input type=button value="Down" onTouchStart="{this.click(); event.preventDefault();}" style="background-color:yellow;  padding: 1px;"onclick="{
   document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
   myCheckHit()     // checks for all collisions
 }">
 
 
 
-<input type=button value="shoot" onTouchStart="{this.click(); event.preventDefault();}" onclick="{
+<input type=button value="shoot" onTouchStart="{this.click(); event.preventDefault();}" style="background-color:yellow;  padding: 1px;"onclick="{
 
 if (myShooting > 2 ){myShooting = 1}
 
