@@ -1,5 +1,7 @@
 
 
+
+
 <script>
 
    // global variables here
@@ -73,7 +75,7 @@ function myCheckHit(){
      document.getElementById('myBullet01').style.left = '1500px'  
      document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
      document.all.myText01.value = 'You shot myImg02'  
-        const myTimeout = setTimeout(myNextlvl, 5000);
+       const myTimeout = setTimeout(myNextlvl, 5000);
      myScore += 1
       
      
@@ -89,13 +91,13 @@ function myCheckHit(){
       document.getElementById('myBullet01').style.left = '1500px'  
       document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
       document.all.myText01.value = 'You shot myImg02'  
-         const myTimeout = setTimeout(myNextlvl, 5000);
+        const myTimeout = setTimeout(myNextlvl, 5000);
       myScore += 1
    
       
    }   
      if ( myHitOther('myBullet01','myImg03') ){
-      clearInterval(myGun01
+      clearInterval(myGun01)
       alert('you win')
       document.getElementById('myBullet01').style.left = '1500px'  
       document.getElementById('myImg03').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif'
