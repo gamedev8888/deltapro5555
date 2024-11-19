@@ -1,34 +1,81 @@
-Version 0.0.13<br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator</title>
+    <style>
+        body {
+            background-color: #a040f5;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        input[type=number], input[type=button] {
+            background-color: lightgray;
+            padding: 5px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+        }
+        input[type=button] {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
 
+<h2>t1a05-taxes by Ayan</h2>
 
-<h2 align=center>t1a05-taxes by Ayan</h2>
-<body style="background-color:#a040f5;">
-Pay &/hour:<input id="myNum01" type=number style="background-color:lightgray;  padding: 1px;" value="15" >   
-Hours Worked:<input id="myNum02" type=number style="background-color:lightgray;  padding: 1px;" value="8" >   
-Tax:<input id="myNum03" type=number style="background-color:lightgray;  padding: 1px;" value="30" >
+<label for="myNum01">Pay &/hour:</label>
+<input id="myNum01" type="number" value="15">
+
+<label for="myNum02">Hours Worked:</label>
+<input id="myNum02" type="number" value="8">
+
+<label for="myNum03">Tax (%):</label>
+<input id="myNum03" type="number" value="30">
 
 <br>
 
-<input type=button value="Calculate Tax" style="background-color:lightgray;  padding: 1px;" onclick="{
-let myPay = parseFloat(document.getElementById('myNum01').value) 
-let myHours = parseFloat(document.getElementById('myNum02').value) 
-let myTax = parseFloat(document.getElementById('myNum03').value) 
-let myPayToday = myPay * myHours                                          
-let myTaxToday = myPay * myHours * myTax * 0.01 
-let myTakeHomeToday = myPayToday - myTaxToday   
-                                                  
-                                                  
-                                                  
-document.getElementById('myDiv01').innerHTML = 'I get paid: '+ myPayToday + ', I pay this tax today: ' + myTaxToday + ', I take this home today: ' + myTakeHomeToday + '<br>'
-document.getElementById('myDiv01').innerHTML += 'I get paid per month: '+ myPayToday*20 + ', I pay this tax today: ' + myTaxToday*20 + ', I take this home today: ' + myTakeHomeToday*20 + '<br>'
-document.getElementById('myDiv01').innerHTML += 'I paid this year : '+ myPayToday*200 + ', I pay this tax today: ' + myTaxToday*200 + ', I take this home today: ' + myTakeHomeToday*200 + '<br>'
-    
-                                                  
-                                                  
-                                                  
-}"><br>
+<input type="button" value="Calculate Tax" onclick="calculateTax()">
 
 <div id="myDiv01">...</div>
+
+<script>
+function calculateTax() {
+    let myPay = parseFloat(document.getElementById('myNum01').value);
+    let myHours = parseFloat(document.getElementById('myNum02').value);
+    let myTax = parseFloat(document.getElementById('myNum03').value);
+    
+    let myPayToday = myPay * myHours;
+    let myTaxToday = myPayToday * myTax * 0.01;
+    let myTakeHomeToday = myPayToday - myTaxToday;
+
+    // Calculating Monthly and Yearly values
+    let monthlyPay = myPayToday * 20;  // Assuming about 20 working days in a month
+    let yearlyPay = myPayToday * 200;    // Assuming about 200 working days in a year
+
+    // Displaying results
+    document.getElementById('myDiv01').innerHTML = `
+        <strong>I get paid today:</strong> $${myPayToday.toFixed(2)}<br>
+        <strong>I pay this tax today:</strong> $${myTaxToday.toFixed(2)}<br>
+        <strong>I take this home today:</strong> $${myTakeHomeToday.toFixed(2)}<br><br>
+        
+        <strong>I get paid per month:</strong> $${monthlyPay.toFixed(2)}<br>
+        <strong>I pay this tax per month:</strong> $${(myTax * 0.01 * monthlyPay).toFixed(2)}<br>
+        <strong>I take this home per month:</strong> $${(monthlyPay - (myTax * 0.01 * monthlyPay)).toFixed(2)}<br><br>
+
+        <strong>I paid this year:</strong> $${yearlyPay.toFixed(2)}<br>
+        <strong>I pay this tax this year:</strong> $${(myTax * 0.01 * yearlyPay).toFixed(2)}<br>
+        <strong>I take this home this year:</strong> $${(yearlyPay - (myTax * 0.01 * yearlyPay)).toFixed(2)}<br>
+    `;
+}
+</script>
+
+</body>
+</html>
 
 
 
