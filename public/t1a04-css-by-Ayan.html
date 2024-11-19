@@ -1,44 +1,63 @@
-Version 0.0.10
-<h1 align=center>T1A04-CSS-by-Ayan</h1>
-<style>
-  @keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
-}
-</style>
-<body style="background-color:#b07a5f;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T1A04-CSS-by-Ayan</title>
+    <style>
+        body {
+            background-color: #b07a5f;
+        }
+        @keyframes mymove {
+            from { left: 0; }
+            to { left: 200px; }
+        }
+        textarea {
+            position: relative;
+            border: dotted solid coral;
+            overflow: hidden;
+            width: 90%; /* Fixed the width unit */
+            height: 50px; /* Fixed the height unit */
+            background-color: darkgray;
+            animation: mymove 5s infinite;
+        }
+        #myB1 {
+            color: #00ff00;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">T1A04-CSS-by-Ayan</h1>
 
-  Reference Link
-<a href="https://www.w3schools.com/cssref/default.asp">w3schools</a><br>
-  
-Properly done with a .css file listing all css commands for your website<br>
-Another way to do CSS (Cascading Style Sheets: determine colors locations extra effects on the tags on your web page)<br>
+    <p>Reference Link: <a href="https://www.w3schools.com/cssref/default.asp">w3schools</a></p>
+    <p>Properly done with a .css file listing all CSS commands for your website.</p>
+    <p>Another way to do CSS (Cascading Style Sheets: determines colors, locations, extra effects on the tags on your web page).</p>
 
-Here is typical in document style
-<pre>
+    <p>Here is typical in-document style:</p>
+    <pre>
 b {
+    color: #00ff00;
 }
-color: #00ff00;
-</pre><br>
-I do CSS inside the tag. It overpowers all other methods<br>
+    </pre>
 
+    <p>I do CSS inside the tag. It overpowers all other methods.</p>
 
+    <b>This is bold</b><br>
+    <b id="myB1">This is bold</b>
+    <input type="button" id="button1" value="Change" onclick="changeStyles()"><br>
 
-<b>This is bold</b><br>
-<b id="myB1" style="color:#00ff00; background-color:blue; "> This is bold</b> <input type=button id="button1" value="Change" height:50; background-color:darkgray;  onclick="{
-document.getElementById('myB1').style.color = 'red'
-document.getElementById('myB1').style.backgroundColor = 'yellow'
-  document.getElementById('button1').style.backgroundColor = 'darkgray'
-}"><br>
+    <textarea>Advanced: see if you move this text area</textarea><br>
+    
+    <img width="200" src="https://w0.peakpx.com/wallpaper/569/388/HD-wallpaper-dead-island-adventure-dark-horror-iphone-new-ocean-skull-thumbnail.jpg" alt="Dead Island Image"><br><br>
+    <img width="109" src="https://www.tailorbrands.com/wp-content/uploads/2020/07/mcdonalds-logo.jpg" alt="McDonald's Logo"><br><br>
 
-
-
-  
-  
-<textarea style="position:relative; border-style: dotted; border-style: solid; border-color: coral; overflow: hidden; left: 0; top:0; width: 90; height:50;background-color:darkgray;animation: mymove 5s infinite;"> Advanced see if you move this text area
-</textarea><br>
- 
- 
-<img width=200  src="https://w0.peakpx.com/wallpaper/569/388/HD-wallpaper-dead-island-adventure-dark-horror-iphone-new-ocean-skull-thumbnail.jpg"><br><br>
-<img width=109  src="https://www.tailorbrands.com/wp-content/uploads/2020/07/mcdonalds-logo.jpg"><br><br>
-
+    <script>
+        function changeStyles() {
+            document.getElementById('myB1').style.color = 'red';
+            document.getElementById('myB1').style.backgroundColor = 'yellow';
+            document.getElementById('button1').style.backgroundColor = 'darkgray';
+        }
+    </script>
+</body>
+</html>
