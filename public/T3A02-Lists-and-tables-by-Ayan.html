@@ -1,50 +1,72 @@
-<h5<Version 0.0.2</h5>
-<style>
-  @keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version 0.0.2</title>
+    <style>
+        @keyframes mymove {
+            from {left: 0px;}
+            to {left: 200px;}
+        }
 
-<h1 align=center>T1A02-Lists-and-tables-by-Ayan</h1>
+        #myimage01 {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
 <body style="background-color:#808080;">
-<h2> Lists</h2>
+    <h1 align="center">T1A02 - Lists and Tables by Ayan</h1>
 
- 
-  
+    <h2>Lists</h2>
+    <ul>
+        <li>Canada</li>
+        <li>France</li>
+        <li>India</li>
+        <li>UAE</li>
+        <li>Morocco</li>
+    </ul>
 
-<u1> Unordered list of Countries (at least 5
-  <li>Canada
-  <li>France
-  <li>India
-  <li>UAE
-  <li>Morroco
- </ul>
+    <ol>
+        <li>Macaroni and Cheese</li>
+        <li>Steak</li>
+        <li>Chicken</li>
+        <li>Pizza</li>
+        <li>Lasagna</li>
+    </ol>
 
+    <h2>Tables</h2>
+    <table border="1">
+        <tr>
+            <td>A</td>
+            <td>B</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+        </tr>
+    </table>
 
- <ol>Ordered list of fav foods (at least 5)
-  <li>kd
-  <li>steak
-  <li>chicken
-  <li>pizza
-  <li>lasgna
- </ol>
-<h2> Tables</h2>
+    <b>Assignment:</b> Make a 4 x 4 table, then make a link and image table with border = 0<br><br>
 
-<table border=1>
-<tr><td>A</td><td>B</td></tr>
-<td><td>1</td><td>2</td></tr>
-<b>Assignment</b> Make a 4 x 4 table ,
-then make a link and image table with border =0<br><br><b>
+    <h2>Advanced</h2>
+    Load an image and get it to move 10 pixels to the left using the button below:<br>
+    <img id="myimage01" src="https://via.placeholder.com/50" alt="My Image"><br>
+    <img width="200" style="position:relative; animation: mymove 5s infinite;" src="https://images5.alphacoders.com/614/thumb-1920-614325.jpg"><br><br>
+    <input type="button" value="Go left" onclick="moveImage()">
 
-<h2>Advanced</2>
+    <div id="myDiv01">...</div>
 
-Load an image and get it to move 10 pixels to the left using the button below<b>
-<input id=Myimage01" src="position:relative; left:0; top:0; top:0; width:50; height:50; "><br>
-<img width=200 style="position:relative;animation: mymove 5s infinite;" src="https://images5.alphacoders.com/614/thumb-1920-614325.jpg"><br><br>
-<input type=button value="Go left" onclick="{
-   document.getElementByld('myimage01').style.left = '200px'
-   document.getElementByld('myDiv01').innerHTML = 'It went left'
-}">
-
-<div id="myDiv01">...</div>
+    <script>
+        function moveImage() {
+            const img = document.getElementById('myimage01');
+            img.style.left = '200px'; // Moves the image to the right when the button is clicked
+            document.getElementById('myDiv01').innerHTML = 'It went left';
+        }
+    </script>
+</body>
+</html>
