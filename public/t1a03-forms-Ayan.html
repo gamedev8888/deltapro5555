@@ -1,49 +1,62 @@
-<h1 align=center>t1a03-forms-Ayan.html</h1>
-<style>
-  @keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
-}
-</style>
-
-<font color=blue> Prove you can use: Forms</font>
-<body style="background-color:#574BBF;">
-The following are all form elements (add to them):<br>
-<form >
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example - Ayan</title>
+    <style>
+        @keyframes mymove {
+            from { left: 0px; }
+            to { left: 200px; }
+        }
+        body {
+            background-color: #574BBF;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">t1a03-forms-Ayan.html</h1>
+    <font> Prove you can use: Forms</font>
+    <br><br>
+    
     <form action="/action_page.php">
-  <label for="birthday">Birthday:</label>
-  <input type="date" id="birthday" name="birthday">
-  <input type="submit">
-  
-Enter Your First Name:<input type=text id="myText01" value="Ayan"><br>
-Checkbox: <br>
-Beef:<input type=checkbox><br>
-Veggy: <input type=checkbox><br>
-Radio Buttons:<br>
-107.7 <input type=radio name="myRad01" value=""><br>  
-83.5 <input type=radio name="myRad01" value=""><br>
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday"><br><br>
 
-hidden:<input type=hidden><br>
-File:<input type=file><br>
-reset:<input type =reset><br>
-submit (advanced<input type=submit><br>
-  
-Button: <input type=button value="click" onclick="{
-   document.getElementByid('myArea01').value = 'Cool
-}"><br>
-Textarea:<br>
-<textarea id='myArea01' cols=60 rows=5 > wow </textarea><br>  
+        Enter Your First Name:
+        <input type="text" id="myText01" value="Ayan"><br><br>
 
-Select Box:<BR>
-<select id="mySelect01" size=2>
-<option value='myOne'>One 
-<option value='myTwo'>Two
-<option value='myThree'>Three  
-</select>
-</forms>  
-<br><br>
- <img width=200 style="position:relative;animation: mymove 5s infinite;" src="https://wallup.net/wp-content/uploads/2016/07/19/7572-Venom-748x421.jpg"><br>  
- 
-<br>
+        <strong>Checkbox:</strong><br>
+        Beef: <input type="checkbox"><br>
+        Veggy: <input type="checkbox"><br><br>
 
+        <strong>Radio Buttons:</strong><br>
+        107.7 <input type="radio" name="myRad01" value="107.7"><br>
+        83.5 <input type="radio" name="myRad01" value="83.5"><br><br>
+
+        <input type="hidden" value="hiddenValue"><br>
+
+        <strong>File Upload:</strong>
+        <input type="file"><br><br>
+
+        <input type="reset" value="Reset"><br>
+        <input type="submit" value="Submit"><br><br>
+
+        <strong>Button:</strong>
+        <input type="button" value="click" onclick="document.getElementById('myArea01').value = 'Cool';"><br>
+
+        <strong>Textarea:</strong><br>
+        <textarea id="myArea01" cols="60" rows="5">wow</textarea><br><br>
+
+        <strong>Select Box:</strong>
+        <select id="mySelect01" size="2">
+            <option value="myOne">One</option>
+            <option value="myTwo">Two</option>
+            <option value="myThree">Three</option>
+        </select><br><br>
+    </form>
+    
+    <img width="200" style="position: relative; animation: mymove 5s infinite;" src="https://wallup.net/wp-content/uploads/2016/07/19/7572-Venom-748x421.jpg"><br>
+</body>
+</html>
