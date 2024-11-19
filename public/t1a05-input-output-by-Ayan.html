@@ -1,42 +1,49 @@
-Version 0.0.6
-<h2 align=center>t1a05-input output by Ayan</h2>
-<style>
-  @keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
-}
-</style>
-
-<a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp">Good reference to input putput Javascript innerHTML value by Fred</a>
-<h4> Example input output code</h4>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Output Example</title>
+    <style>
+        @keyframes mymove {
+            from { left: 0px; }
+            to { left: 200px; }
+        }
+    </style>
+</head>
 <body style="background-color:#964B00;">
+    <h2 align="center">t1a05-input output by Ayan</h2>
+    <a href="https://www.w3schools.com/jsref/prop_html_innerhtml.asp">
+        Good reference to input output Javascript innerHTML value by Fred
+    </a>
+    <h4>Example input output code</h4>
 
+    <pre>
+        let myIn01 = document.getElementById('myNum01').value
+        document.getElementById('myDiv1').innerHTML = myIn01 + " squared = " + myAnswer;
+    </pre>
 
- 
-  <pre>
-  
-  let myIn01 = document.getElementById('myNum01').value
-1
-document.getElementById('myDive1').innerHTML = myIn01 + squared =
-</pre>
+    <h4>Example working code</h4>
 
+    <input id="myNum01" type="number" value="4"><br>
+    <input type="button" value="Calculate square" onclick="calculateSquare()"><br>
+    <div id="myDiv1">...</div>
 
-<h4> Example working code</h4>
+    <script>
+        function calculateSquare() {
+            let myIn01 = parseFloat(document.getElementById('myNum01').value);
+            let myAnswer = myIn01 * myIn01;  // Square the input
+            document.getElementById('myDiv1').innerHTML = myIn01 + " squared = " + myAnswer;
+        }
+    </script>
 
-<input id="myNum01" type=number value="4" ><br>
+    <form action="/action_page.php">
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+        <input type="submit">  
+    </form>
 
-<input type=button value="4 squares = 16" onclick="{
-let myIn01 = parseFloat(document.getElementById('myNum01').value) let myAnswer = myIn01 myIn01
-document.getElementById('myDive1').innerHTML =
-my In01+ squared = + myAnswer
-}"><br>
-
-<div id="myDiv01">...</div>
-
-
-<form action="/action_page.php">
-  <label for="birthday">Birthday:</label>
-  <input type="date" id="birthday" name="birthday">
-  <input type="button">  
-<br>
-<img width=200 style="position:relative;animation: mymove 5s infinite;" src="https://wallpapers.com/images/hd/cool-pictures-trippy-skull-4n1nu2vduiy218x8.jpg"><br> 
+    <br>
+    <img width="200" style="position:relative;animation: mymove 5s infinite;" src="https://wallpapers.com/images/hd/cool-pictures-trippy-skull-4n1nu2vduiy218x8.jpg"><br>
+</body>
+</html>
