@@ -1,47 +1,50 @@
-Version 0.0.1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tla06-variables-by-Ayan</title>
+    <style>
+        @keyframes mymove {
+            from { left: 0px; }
+            to { left: 200px; }
+        }
+        body {
+            background-color: #F5F5DC;
+        }
+    </style>
+</head>
+<body>
 
-<style>
-  @keyframes mymove {
-  from {left: 0px;}
-  to {left: 200px;}
-}
-</style>
+    <h2 align="center">tla06-variables-by-Ayan.html</h2>
+    <a href="#">Reference to variables</a><br>
 
-<h2 align=center>tla06-varaibles-by-Ayan.html</h2>
-<body style="background-color:#F5F5DC;">
-<a href="">\Reference to variables</a><br>
+    <p>Other languages use: bool, int, float, char, string, int_8, int_16 etc.</p>
+    <p>Note: JavaScript does use var and let for local variables. For global variables, Mr. Ellis prefers to use <code>document.myVarName</code>.</p>
 
+    <h4>Example input output code</h4>
+    <pre>
+let myIn01 = document.getElementById('myText01').value;
+document.getElementById('myDiv01').innerHTML = myIn01;
+    </pre>
 
-Other Languages use: bool, int, float, char, string,
-int_8, int_16 etc<br>
+    <h4>Example working code</h4>
 
-Note: Javascript does use var and let for local variables.
-<br> For Global variables Mr. Ellis prefers to use document.myVarName
-
-
-<h4> Example input output code</h4>
-<pre>
-    let myIn01 = document.getElementById('myText01').value
-    document.getElementById('myDiv01').innerHTML = myIn01
-</pre>
-
-<h4> Example working code</h4>
-
-<input id="myText01" type=text value="The dog"><br>
-
-<input type=button value="Show Variable" onclick="{
-   let myIn01 = document.getElementById('myText01').value
-      document.getElementById('myDiv01').innerHTML = myIn01
+    <input id="myText01" type="text" value="The dog"><br>
     
-   }"><br>
+    <input type="button" value="Show Variable" onclick="{
+        let myIn01 = document.getElementById('myText01').value;
+        document.getElementById('myDiv01').innerHTML = myIn01;
+    }"><br>
 
-<input type=button value="Using no variable" onclick="{ 
-   document.getElementById('myDiv01').innerHTML = 
-       document.getElementById('myText01').value
+    <input type="button" value="Using no variable" onclick="{
+        document.getElementById('myDiv01').innerHTML = document.getElementById('myText01').value;
+    }"><br>
 
-}"><br>
+    <div id="myDiv01">...</div>
 
-<div id="myDiv01">...</div>
+    <img width="300" style="position: relative; animation: mymove 5s infinite;" src="https://c4.wallpaperflare.com/wallpaper/863/731/715/cat-wallpaper-thumb.jpg" alt="Cat Wallpaper"><br><br>
+    <img width="100" style="position: relative; animation: mymove 5s infinite;" src="https://www.carlogos.org/logo/Jaguar-logo-2012-1920x1080.png" alt="Jaguar Logo"><br><br>
 
-<img width=300 style="position:relative;animation: mymove 5s infinite;" src="https://c4.wallpaperflare.com/wallpaper/863/731/715/cat-wallpaper-thumb.jpg"><br><br>
-<img width=100 style="position:relative;animation: mymove 5s infinite;" src="https://www.carlogos.org/logo/Jaguar-logo-2012-1920x1080.png"><br><br>    
+</body>
+</html>
