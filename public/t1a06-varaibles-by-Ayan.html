@@ -1,50 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tla06-variables-by-Ayan</title>
+    <title>Variable Example by Ayan</title>
     <style>
-        @keyframes mymove {
-            from { left: 0px; }
-            to { left: 200px; }
-        }
         body {
             background-color: #F5F5DC;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h2 {
+            color: #2E4C6D;
+        }
+
+        p {
+            color: #555;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 200px;
+            margin-bottom: 10px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            padding: 10px 15px;
+            margin: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #myDiv01 {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        @keyframes mymove {
+            from {
+                left: 0px;
+            }
+
+            to {
+                left: 200px;
+            }
+        }
+
+        .animated-image {
+            position: relative;
+            animation: mymove 5s infinite;
         }
     </style>
 </head>
+
 <body>
 
-    <h2 align="center">tla06-variables-by-Ayan.html</h2>
+    <h2>Variable Example by Ayan</h2>
     <a href="#">Reference to variables</a><br>
 
     <p>Other languages use: bool, int, float, char, string, int_8, int_16 etc.</p>
-    <p>Note: JavaScript does use var and let for local variables. For global variables, Mr. Ellis prefers to use <code>document.myVarName</code>.</p>
+    <p>Note: JavaScript does use var and let for local variables. For global variables, it's preferred to use <code>document.myVarName</code>.</p>
 
-    <h4>Example input output code</h4>
+    <h4>Example Input and Output Code</h4>
     <pre>
 let myIn01 = document.getElementById('myText01').value;
 document.getElementById('myDiv01').innerHTML = myIn01;
     </pre>
 
-    <h4>Example working code</h4>
+    <h4>Working Example</h4>
 
-    <input id="myText01" type="text" value="The dog"><br>
-    
-    <input type="button" value="Show Variable" onclick="{
-        let myIn01 = document.getElementById('myText01').value;
-        document.getElementById('myDiv01').innerHTML = myIn01;
-    }"><br>
+    <input id="myText01" type="text" value="The dog" placeholder="Enter some text"><br>
 
-    <input type="button" value="Using no variable" onclick="{
-        document.getElementById('myDiv01').innerHTML = document.getElementById('myText01').value;
-    }"><br>
+    <input type="button" id="showVariableBtn" value="Show Variable"><br>
+    <input type="button" id="noVariableBtn" value="Using No Variable"><br>
 
     <div id="myDiv01">...</div>
 
-    <img width="300" style="position: relative; animation: mymove 5s infinite;" src="https://c4.wallpaperflare.com/wallpaper/863/731/715/cat-wallpaper-thumb.jpg" alt="Cat Wallpaper"><br><br>
-    <img width="100" style="position: relative; animation: mymove 5s infinite;" src="https://www.carlogos.org/logo/Jaguar-logo-2012-1920x1080.png" alt="Jaguar Logo"><br><br>
+    <img class="animated-image" width="300" src="https://c4.wallpaperflare.com/wallpaper/863/731/715/cat-wallpaper-thumb.jpg" alt="Cat Wallpaper"><br><br>
+    <img class="animated-image" width="100" src="https://www.carlogos.org/logo/Jaguar-logo-2012-1920x1080.png" alt="Jaguar Logo"><br><br>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const myText01 = document.getElementById('myText01');
+            const myDiv01 = document.getElementById('myDiv01');
+
+            document.getElementById('showVariableBtn').addEventListener('click', function () {
+                const value = myText01.value.trim();
+                if (value) {
+                    myDiv01.innerHTML = value;
+                } else {
+                    myDiv01.innerHTML = "Please enter a value.";
+                }
+            });
+
+            document.getElementById('noVariableBtn').addEventListener('click', function () {
+                const value = myText01.value.trim();
+                if (value) {
+                    myDiv01.innerHTML = value;
+                } else {
+                    myDiv01.innerHTML = "Please enter a value.";
+                }
+            });
+        });
+    </script>
 
 </body>
+
 </html>
