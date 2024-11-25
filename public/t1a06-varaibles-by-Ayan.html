@@ -90,8 +90,9 @@ document.getElementById('myDiv01').innerHTML = myIn01;
 
     <div id="myDiv01">...</div>
 
-    <img class="animated-image" width="300" src="https://c4.wallpaperflare.com/wallpaper/863/731/715/cat-wallpaper-thumb.jpg" alt="Cat Wallpaper"><br><br>
-    <img class="animated-image" width="100" src="https://www.carlogos.org/logo/Jaguar-logo-2012-1920x1080.png" alt="Jaguar Logo"><br><br>
+    <!-- Updated image sources with error fallback -->
+    <img class="animated-image" width="300" src="https://images.unsplash.com/photo-1560807707-8cc77767d783" alt="Cat Wallpaper" onerror="this.onerror=null; this.src='https://via.placeholder.com/300?text=Image+Not+Found';"><br><br>
+    <img class="animated-image" width="100" src="https://upload.wikimedia.org/wikipedia/commons/8/88/Jaguar_logo.png" alt="Jaguar Logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/100?text=Image+Not+Found';"><br><br>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
