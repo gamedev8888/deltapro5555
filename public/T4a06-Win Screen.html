@@ -1,3 +1,53 @@
-<h1 align=center><font color=white>Congratulatons</font></h1>
-<body style="background-color:#000000;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            overflow: hidden; /* Prevent scrolling */
+        }
+    </style>
+</head>
+<body>
+    <h1>Congratulations</h1>
 
+    <!-- Include the Confetti library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Function to fire confetti
+        function fireConfetti() {
+            const duration = 3 * 1000; // 3 seconds
+            const end = Date.now() + duration;
+
+            const colors = ['#ff0c00', '#00ff0d', '#00cfff', '#ff00c0', '#ff7000'];
+
+            (function frame() {
+                // Launch confetti
+                confetti({
+                    particleCount: 3,
+                    angle: 90,
+                    spread: 180,
+                    startVelocity: 30,
+                    decay: 0.9,
+                    scalar: 1.2,
+                    colors: colors,
+                    zIndex: 9999,
+                });
+                
+                // Continue while time remains
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            })();
+        }
+
+        // Trigger confetti on page load
+        window.onload = fireConfetti;
+    </script>
+</body>
+</html>
