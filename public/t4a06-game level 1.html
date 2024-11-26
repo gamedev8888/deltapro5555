@@ -33,7 +33,7 @@
 
         // Check for hits and update the game state
         function myCheckHit() {
-            document.all.myText01.value = myScore;  // Show the present score
+            document.getElementById("myText01").value = myScore;  // Show the current score
 
             // Bounce logic for myBlock01
             const block = document.getElementById('myBlock01');
@@ -41,7 +41,7 @@
                 myVerticalSpeed *= -1; // Change direction
             }
 
-            // Check for various collision conditions
+            // Check for collisions
             if (myHitOther('myImg01', 'myBlock01')) {
                 alert('You lose');
                 document.getElementById('myImg01').style.left = '20px';
@@ -50,7 +50,7 @@
 
             if (myHitOther('myBullet01', 'myImg02') || myHitOther('myBullet02', 'myImg02')) {
                 document.getElementById('myImg02').src = 'https://i.gifer.com/origin/a0/a07ad08920f303f655251b1a0b353b86_w200.gif';
-                document.all.myText01.value = 'You shot myImg02';
+                document.getElementById("myText01").value = 'You shot myImg02';
                 myScore += 1;
 
                 // Clear bullets and reset for next level
@@ -61,13 +61,13 @@
             if (myHitOther('myBullet01', 'myBlock01') || myHitOther('myBullet02', 'myBlock01')) {
                 alert('You lose');
                 resetBullets();
-                myScore += 1;
+                myScore -= 1; // Decrease score on bullet collision with block
             }
 
             // Game Over condition
             if (myScore <= 0) {
-                document.all.myText01.value = 'You Lose score at zero!';
-                alert('Sorry you lose');
+                document.getElementById("myText01").value = 'You Lose score at zero!';
+                alert('Sorry, you lose');
                 location.reload();
             }
         }
@@ -81,7 +81,7 @@
             const gunIndex = bulletId === 'myBullet01' ? 0 : 1;
             clearInterval(myGuns[gunIndex]);
             myGuns[gunIndex] = setInterval(function() {
-                bullet.style.left = parseInt(bullet.style.left) + 10 + 'px';
+                bullet.style.left = (parseInt(bullet.style.left) + 10) + 'px';
                 myCheckHit(); 
             }, 20); // Speed of bullet
         }
@@ -111,17 +111,16 @@
 
         // Go to the next level
         function myNextlvl() {
-            alert('YOU WIN GO TO THE NEXT LEVEL');
-            location = 't4a06-game_level_2.html';  
+            alert('YOU WIN! GO TO THE NEXT LEVEL');
+            location.href = 't4a06-game_level_2.html';  
         }
 
         // Initialize block movement
         function startBlockMovement() {
             clearInterval(myTimer01);
-            clearInterval(myTimer02);
             myTimer01 = setInterval(function() {
                 const block = document.getElementById('myBlock01');
-                block.style.top = parseInt(block.style.top) + myVerticalSpeed + 'px';
+                block.style.top = (parseInt(block.style.top) + myVerticalSpeed) + 'px';
                 myCheckHit(); // Check for all collisions
             }, 50);
         }
@@ -129,29 +128,29 @@
         window.onload = startBlockMovement; // Start block movement on page load
     </script>
 </head>
-<body id="myBody" background="https://i.gifer.com/D4Ll.gif" style="background-size:cover;" onkeydown="{
-    document.all.myText01.value = event.key;
+<body id="myBody" style="background-image: url('https://i.gifer.com/D4Ll.gif'); background-size: cover;" onkeydown="{
+    document.getElementById('myText01').value = event.key;
     switch (event.key) {
         case 'd': // Move right
-            document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px';
+            document.getElementById('myImg01').style.left = (parseInt(document.getElementById('myImg01').style.left) + 10) + 'px';
             break;
         case 'Enter': // Shoot
             myShoot();
             break;
         case 's': // Move down
-            document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px';
+            document.getElementById('myImg01').style.top = (parseInt(document.getElementById('myImg01').style.top) + 10) + 'px';
             break;
         case 'w': // Move up
-            document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) - 10 + 'px';
+            document.getElementById('myImg01').style.top = (parseInt(document.getElementById('myImg01').style.top) - 10) + 'px';
             break;
     }
     myCheckHit(); // Check for collisions
 }">
-    <h1 align="center"><font color="Yellow">Game Level 1</font></h1>
+    <h1 align="center"><span style="color: Yellow;">Game Level 1</span></h1>
 
-    <input id="myText01" type="text" value="" style="background-color:yellow; padding: 1px;" size="50" placeholder="Feedback here"><br>
+    <input id="myText01" type="text" value="" style="background-color: yellow; padding: 1px;" size="50" placeholder="Feedback here"><br>
 
-    <input type="button" value="Auto Background Left" style="background-color:yellow; padding: 1px;" onclick="{
+    <input type="button" value="Auto Background Left" style="background-color: yellow; padding: 1px;" onclick="{
         clearInterval(myClock);
         myClock = setInterval(function(){
             myGlobalX -= 5;
@@ -159,22 +158,22 @@
         }, 100);
     }">
 
-    <input type="button" value="Right" style="background-color:yellow; padding: 1px;" onclick="{
-        document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px';
+    <input type="button" value="Right" style="background-color: yellow; padding: 1px;" onclick="{
+        document.getElementById('myImg01').style.left = (parseInt(document.getElementById('myImg01').style.left) + 10) + 'px';
         myCheckHit(); // Check for all collisions
     }">
 
-    <input type="button" value="Down" style="background-color:yellow; padding: 1px;" onclick="{
-        document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px';
+    <input type="button" value="Down" style="background-color: yellow; padding: 1px;" onclick="{
+        document.getElementById('myImg01').style.top = (parseInt(document.getElementById('myImg01').style.top) + 10) + 'px';
         myCheckHit(); // Check for all collisions
     }">
 
-    <input type="button" value="Shoot" style="background-color:yellow; padding: 1px;" onclick="myShoot();"><br><br>
+    <input type="button" value="Shoot" style="background-color: yellow; padding: 1px;" onclick="myShoot();"><br><br>
 
-    <img id="myImg01" src="output-onlinegiftools.gif" style="position:absolute; width:100px; height:80px; left: 10px; top:190px;">
-    <img id="myImg02" src="boat.png" style="position:absolute; width:100px; height:80px; left:350px; top:190px;">
-    <img id="myBullet01" src="bullet.png" style="position:absolute; width:20px; height:20px; left: 130px; top:190px;">
-    <img id="myBullet02" src="bullet.png" style="position:absolute; width:20px; height:20px; left: 130px; top:190px;">
-    <img id="myBlock01" src="Planks.gif" style="position:absolute; width:100px; height:100px; left:150px; top:20px;">
+    <img id="myImg01" src="output-onlinegiftools.gif" style="position: absolute; width: 100px; height: 80px; left: 10px; top: 190px;">
+    <img id="myImg02" src="boat.png" style="position: absolute; width: 100px; height: 80px; left: 350px; top: 190px;">
+    <img id="myBullet01" src="bullet.png" style="position: absolute; width: 20px; height: 20px; left: 130px; top: 190px;">
+    <img id="myBullet02" src="bullet.png" style="position: absolute; width: 20px; height: 20px; left: 130px; top: 190px;">
+    <img id="myBlock01" src="Planks.gif" style="position: absolute; width: 100px; height: 100px; left: 150px; top: 20px;">
 </body>
 </html>
